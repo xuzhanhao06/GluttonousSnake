@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- lang="en" 编码为英文 -->
+	<head>
+		<meta charset="utf-8">
+		<title>Document</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+			}
+			.row{
+				overflow: hidden;
+				/* 溢出隐藏 */
+			}
+			.grid{
+				float: left;
+				width: 30px;
+				height: 30px;
+				border: 1px solid #ccc;
+				/** 元素的总宽度 = 600; 总高度 = 600; */ 
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/Game.js"></script>
+		<script type="text/javascript" src="js/Map.js"></script>
+		<script type="text/javascript" src="js/Food.js"></script>
+		<script type="text/javascript" src="js/Block.js"></script>
+		<script type="text/javascript" src="js/Snake.js"></script>
+		<script type="text/javascript">
+		//实例化
+		var map=new Map(20,20,600,600);
+		var food=new Food(2,6,"img/food.jpg");
+			
+		//定义蛇所需要的图片
+		var snakeObj={
+			head_pic:["img/1.png","img/2.png","img/3.png","img/4.png"],
+			body_pic:["img/5.png",],
+			tail_pic:["img/6.png","img/7.png","img/8.png","img/9.png"]
+		}
+		var snake=new Snake(snakeObj);
+		var block=new Block("img/block.png");
+		//初始化游戏类
+		var g=new Game(map,food,snake,block);
+		</script>
+	</body>
+</html>
